@@ -4,7 +4,13 @@
     <meta charset="utf-8">
     <title>Authenticating...</title>
     <script type="text/javascript">
-      window.opener.postMessage(<%= @message %>, window.location);
+      // The ID of the extension we want to talk to.
+      var extensionId = "<%= @extension_id %>";
+
+      // Make a simple request:
+      chrome.runtime.sendMessage(editorExtensionId, <%= @message %>,
+      function() { });
+      window.close();
     </script>
   </head>
   <body>

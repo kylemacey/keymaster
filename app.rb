@@ -31,6 +31,7 @@ get '/authorize' do
 end
 
 get '/' do
+  @extension_id = ENV['CHROME_EXTENSION_ID']
   @message = set_auth_message.body
   erb :index
 end
