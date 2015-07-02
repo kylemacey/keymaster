@@ -8,7 +8,7 @@
       var extensionId = "<%= @extension_id %>";
 
       // Make a simple request:
-      chrome.runtime.sendMessage(editorExtensionId, <%= @message %>,
+      chrome.runtime.sendMessage(extensionId, { message: "<%= @message %>" },
       function() { });
       window.close();
     </script>

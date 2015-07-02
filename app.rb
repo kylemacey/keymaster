@@ -22,7 +22,7 @@ helpers do
       code: params[:code]
     }
 
-    HTTParty.post github_token_url, data
+    HTTParty.post github_token_url, body: data
   end
 end
 
